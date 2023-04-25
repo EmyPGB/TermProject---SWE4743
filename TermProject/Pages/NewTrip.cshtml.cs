@@ -16,4 +16,9 @@ namespace TermProject.Pages
         {
         }
     }
+
+    public class Trips
+    {
+        String hello = "Hi !!";
+    }
 }

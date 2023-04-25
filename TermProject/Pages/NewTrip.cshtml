@@ -1,0 +1,28 @@
+﻿
+@page
+@model PrivacyModel
+@{
+    ViewData["Title"] = "New Trip";
+
+    string uniqueID()
+    {
+
+        Guid ID = Guid.NewGuid();
+        string IDasString = ID.ToString();
+
+        return IDasString;
+
+    }
+
+
+
+}
+<h1>@ViewData["Title"]</h1>
+<form method=" post">
+    <fieldset>
+        <p><label> The trip ID is: @uniqueID() </label></p>
+    </fieldset>
+
+</form>
+
+
