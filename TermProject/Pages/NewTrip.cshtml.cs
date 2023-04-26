@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
+
 namespace TermProject.Pages
 {
     public class PrivacyModel : PageModel
@@ -17,8 +18,5 @@ namespace TermProject.Pages
         }
     }
 
-    public class Trips
-    {
-        String hello = "Hi !!";
-    }
+   
 }
