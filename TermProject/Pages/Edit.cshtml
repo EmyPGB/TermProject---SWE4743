@@ -1,0 +1,65 @@
+﻿@page
+@model TermProject.Pages.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Package</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Package.ID" />
+            <div class="form-group">
+                <label asp-for="Package.price" class="control-label"></label>
+                <input asp-for="Package.price" class="form-control" />
+                <span asp-validation-for="Package.price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Package.place" class="control-label"></label>
+                <input asp-for="Package.place" class="form-control" />
+                <span asp-validation-for="Package.place" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Package.transportType" class="control-label"></label>
+                <input asp-for="Package.transportType" class="form-control" />
+                <span asp-validation-for="Package.transportType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Package.leaveTime" class="control-label"></label>
+                <input asp-for="Package.leaveTime" class="form-control" />
+                <span asp-validation-for="Package.leaveTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Package.leaveDate" class="control-label"></label>
+                <input asp-for="Package.leaveDate" class="form-control" />
+                <span asp-validation-for="Package.leaveDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Package.arriveTime" class="control-label"></label>
+                <input asp-for="Package.arriveTime" class="form-control" />
+                <span asp-validation-for="Package.arriveTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Package.arriveDate" class="control-label"></label>
+                <input asp-for="Package.arriveDate" class="form-control" />
+                <span asp-validation-for="Package.arriveDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
