@@ -1,4 +1,5 @@
-﻿namespace TermProject.Models
+﻿
+namespace TermProject.Models
 {
     public class Trip
     {

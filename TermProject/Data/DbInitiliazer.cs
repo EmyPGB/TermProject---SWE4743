@@ -1,4 +1,5 @@
-﻿using TermProject.Models;
+﻿using Microsoft.AspNetCore.Mvc;
+using TermProject.Models;
 
 namespace TermProject.Data
 {
@@ -13,8 +14,7 @@ namespace TermProject.Data
 
             };
 
-            context.Agents.AddRange(agents);
-            context.SaveChanges();
+           
 
 
             // Look for any Packages.

@@ -21,21 +21,21 @@ namespace TermProject.Pages
         }
 
         [BindProperty]
-        public Package Package { get; set; } = default!;
+        public Agent Agent { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null || _context.Packages == null)
+            if (id == null || _context.Agents == null)
             {
                 return NotFound();
             }
 
-            var package =  await _context.Packages.FirstOrDefaultAsync(m => m.ID == id);
-            if (package == null)
+            var agent =  await _context.Agents.FirstOrDefaultAsync(m => m.ID == id);
+            if (agent == null)
             {
                 return NotFound();
             }
-            Package = package;
+            Agent = agent;
             return Page();
         }
 
@@ -48,7 +48,7 @@ namespace TermProject.Pages
                 return Page();
             }
 
-            _context.Attach(Package).State = EntityState.Modified;
+            _context.Attach(Agent).State = EntityState.Modified;
 
             try
             {
@@ -56,7 +56,7 @@ namespace TermProject.Pages
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!PackageExists(Package.ID))
+                if (!AgentExists(Agent.ID))
                 {
                     return NotFound();
                 }
@@ -69,9 +69,9 @@ namespace TermProject.Pages
             return RedirectToPage("./Index");
         }
 
-        private bool PackageExists(int id)
+        private bool AgentExists(int id)
         {
-          return (_context.Packages?.Any(e => e.ID == id)).GetValueOrDefault();
+          return (_context.Agents?.Any(e => e.ID == id)).GetValueOrDefault();
         }
     }
 }

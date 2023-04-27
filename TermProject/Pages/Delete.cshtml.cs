@@ -20,40 +20,40 @@ namespace TermProject.Pages
         }
 
         [BindProperty]
-      public Package Package { get; set; } = default!;
+      public Agent Agent { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null || _context.Packages == null)
+            if (id == null || _context.Agents == null)
             {
                 return NotFound();
             }
 
-            var package = await _context.Packages.FirstOrDefaultAsync(m => m.ID == id);
+            var agent = await _context.Agents.FirstOrDefaultAsync(m => m.ID == id);
 
-            if (package == null)
+            if (agent == null)
             {
                 return NotFound();
             }
             else 
             {
-                Package = package;
+                Agent = agent;
             }
             return Page();
         }
 
         public async Task<IActionResult> OnPostAsync(int? id)
         {
-            if (id == null || _context.Packages == null)
+            if (id == null || _context.Agents == null)
             {
                 return NotFound();
             }
-            var package = await _context.Packages.FindAsync(id);
+            var agent = await _context.Agents.FindAsync(id);
 
-            if (package != null)
+            if (agent != null)
             {
-                Package = package;
-                _context.Packages.Remove(Package);
+                Agent = agent;
+                _context.Agents.Remove(Agent);
                 await _context.SaveChangesAsync();
             }
 

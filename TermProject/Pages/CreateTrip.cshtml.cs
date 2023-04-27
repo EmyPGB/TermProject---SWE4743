@@ -10,11 +10,11 @@ using TermProject.Models;
 
 namespace TermProject.Pages
 {
-    public class CreateModel : PageModel
+    public class CreateTripModel : PageModel
     {
         private readonly TermProject.Data.TermProjectContext _context;
 
-        public CreateModel(TermProject.Data.TermProjectContext context)
+        public CreateTripModel(TermProject.Data.TermProjectContext context)
         {
             _context = context;
         }
@@ -25,18 +25,18 @@ namespace TermProject.Pages
         }
 
         [BindProperty]
-        public Agent Agent { get; set; } = default!;
+        public Trip Trip { get; set; } = default!;
         
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
-          if (!ModelState.IsValid || _context.Agents == null || Agent == null)
+          if (!ModelState.IsValid || _context.Trips == null || Trip == null)
             {
                 return Page();
             }
 
-            _context.Agents.Add(Agent);
+            _context.Trips.Add(Trip);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

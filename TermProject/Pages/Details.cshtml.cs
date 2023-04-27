@@ -19,23 +19,23 @@ namespace TermProject.Pages
             _context = context;
         }
 
-      public Package Package { get; set; } = default!; 
+      public Agent Agent { get; set; } = default!; 
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null || _context.Packages == null)
+            if (id == null || _context.Agents == null)
             {
                 return NotFound();
             }
 
-            var package = await _context.Packages.FirstOrDefaultAsync(m => m.ID == id);
-            if (package == null)
+            var agent = await _context.Agents.FirstOrDefaultAsync(m => m.ID == id);
+            if (agent == null)
             {
                 return NotFound();
             }
             else 
             {
-                Package = package;
+                Agent = agent;
             }
             return Page();
         }
