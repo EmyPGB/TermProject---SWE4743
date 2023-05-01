@@ -1,0 +1,58 @@
+﻿@page
+@model TermProject.Pages.ProcessPaymentModel
+@{
+ 
+}
+<script> 
+
+    bool itinerary = false;
+    
+
+    function validPay() {
+
+        let x =
+        document.forms["payment"]
+        ["paycash"].value;
+
+        if (x == 79000 ) {
+            alert("Payment Accepted. We will generate the Itinerary.");
+            itinerary = true;
+
+        } else {
+            alert("Payment not accepted. Incorrect cash amount.");
+        }
+    }
+
+</script>
+
+
+
+<h3>Payment Total: 79000 </h3>
+
+<h3>How will you pay?</h3>
+
+<h4>
+    <form method="post" name="payment">
+        Cash: <input type="text" name="paycash" />
+        <input type="submit" value="Pay" onclick="validPay()" class="btn btn-primary" />
+    </form>
+    
+    
+        
+
+
+</h4>
+<h4>
+    <a asp-page="./CreateTrip">Cash</a>
+</h4>
+<h4>
+    <a asp-page="./CreateTrip">Check</a>
+</h4>
+              
+
+
+ 
+          
+
+                
+  

@@ -10,22 +10,22 @@ using TermProject.Models;
 
 namespace TermProject.Pages
 {
-    public class IndexModel : PageModel
+    public class ViewTravelersModel : PageModel
     {
-        private readonly TermProject.Data.TermProjectContext _context;
+        private readonly TermProjectContext _context;
 
-        public IndexModel(TermProject.Data.TermProjectContext context)
+        public ViewTravelersModel(TermProjectContext context)
         {
             _context = context;
         }
 
-        public IList<Agent> Agent { get;set; } = default!;
+        public IList<Traveler> Traveler { get; set; } = default!;
 
         public async Task OnGetAsync()
         {
-            if (_context.Agents != null)
+            if (_context.Travelers != null)
             {
-                Agent = await _context.Agents.ToListAsync();
+                Traveler = await _context.Travelers.ToListAsync();
             }
         }
     }

@@ -1,0 +1,31 @@
+﻿@page
+@model TermProject.Pages.CreateTripModel
+<link rel="stylesheet" href="CreateTrip.css">
+
+<center> 
+    <img src="Logo.png" alt="logo" />
+</center>
+
+<center color="#ff0095">
+    <h2> <a asp-page="./AddTravelers">Add a New Traveler</a> </h2>
+    <h2><a asp-page="./AddPackage">Add a New Package</a> </h2>
+    
+    <h2><a asp-page="./Trips">Add a Thank You Note</a></h2>
+   
+    
+    <h2><a asp-page="./ProcessPayment">Make Payment</a></h2>
+   
+</center>
+
+
+
+
+<center>
+<div>
+    <a asp-page="Index">Back to Agent List</a>
+</div>
+</center>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

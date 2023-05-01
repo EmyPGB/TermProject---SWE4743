@@ -1,4 +1,7 @@
-﻿namespace TermProject.Models
+﻿
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace TermProject.Models
 {
     public class Trip
     {
@@ -36,6 +39,10 @@
         public string LastName { get; set; } = string.Empty;
         public string MobilePhone { get; set; } = string.Empty;
 
+        public static implicit operator Traveler(List<Traveler> v)
+        {
+            throw new NotImplementedException();
+        }
     }
 
     public class TripPackage
@@ -50,4 +57,55 @@
 
     }
 
+
+    public class Payment
+    {
+        public int ID { get; set; }
+        public float AmountPaid { get; set; }
+
+        public List<CreditCard> CreditCards { get; set; }
+    }
+
+    public class CreditCard
+    {
+        public int ID { get; set; }
+        public int CardNumber { get; set; }
+        public string ExpDate { get; set; }
+
+        [ForeignKey("PaymentID")]
+        public virtual Payment Payment { get; set; }
+
+        [ForeignKey("AmountPaid")]
+        public virtual Payment AmountPaid { get; set; }
+    }
+
+    public class Cash
+    {
+        public int ID { get; set; }
+        public float Amount { get; set; }
+
+        [ForeignKey("PaymentID")]
+        public virtual Payment Payment { get; set; }
+
+        [ForeignKey("AmountPaid")]
+        public virtual Payment AmountPaid { get; set; }
+    }
+
+    public class Check
+    {
+        public int ID { get; set; }
+        public int CheckNumber { get; set; }
+
+        public float Amount { get; set; }
+
+        [ForeignKey("PaymentID")]
+        public virtual Payment Payment { get; set; }
+
+        [ForeignKey("AmountPaid")]
+        public virtual Payment AmountPaid { get; set; }
+
+
+
+
+    }
 }
