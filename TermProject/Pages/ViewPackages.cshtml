@@ -1,0 +1,73 @@
+﻿@page
+@model TermProject.Pages.ViewPackagesModel
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Package[0].price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Package[0].place)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Package[0].transportType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Package[0].leaveTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Package[0].leaveDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Package[0].arriveTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Package[0].arriveDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Package) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.place)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.transportType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.leaveTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.leaveDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.arriveTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.arriveDate)
+            </td>
+        </tr>
+}       
+    <div>
+            
+            
+
+        </div>
+    </tbody>
+</table>
+
+<p>Price Total: @Model.Sum()</p>
+
+<p>
+    <a asp-page="AddPackage">Add New Package</a>
+</p>
+<p>
+    <a asp-page="CreateTrip">Back to Trip Creation</a>
+</p>

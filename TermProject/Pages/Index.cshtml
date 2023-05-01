@@ -1,15 +1,17 @@
 ﻿@page
 @model TermProject.Pages.IndexModel
-
-
+<center>
+<h2>Welcome Back!</h2>
+<h2>Please Select an Agent</h2>
+</center>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Agent[0].FirstName)
+                First Name
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Agent[0].LastName)
+                Last Name
             </th>
             <th></th>
         </tr>
@@ -24,8 +26,7 @@
                 @Html.DisplayFor(modelItem => item.LastName)
             </td>
             <td>
-                <a asp-page="./Trips">Trips</a> |
-                <a asp-page="./CreateTrip">New Trip</a> |
+                <a asp-page="./CreateTrip">New Trip</a> 
                 
             </td>
         </tr>

@@ -1,0 +1,40 @@
+﻿@page
+@model TermProject.Pages.AddTravelersModel
+
+<h4>Traveler</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Traveler.FirstName" class="control-label"></label>
+                <input asp-for="Traveler.FirstName" class="form-control" />
+                <span asp-validation-for="Traveler.FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Traveler.LastName" class="control-label"></label>
+                <input asp-for="Traveler.LastName" class="form-control" />
+                <span asp-validation-for="Traveler.LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Traveler.MobilePhone" class="control-label"></label>
+                <input asp-for="Traveler.MobilePhone" class="form-control" />
+                <span asp-validation-for="Traveler.MobilePhone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <p><a asp-page="ViewTravelers">View Travelers</a></p>
+    <p><a asp-page="CreateTrip">Back to Trip Creation</a></p>
+
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

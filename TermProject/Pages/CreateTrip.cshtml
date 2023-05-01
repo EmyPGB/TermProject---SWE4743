@@ -1,32 +1,30 @@
 ﻿@page
 @model TermProject.Pages.CreateTripModel
+<link rel="stylesheet" href="CreateTrip.css">
 
-<h4>Trip</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Trip.ID" class="control-label"></label>
-                <input asp-for="Trip.ID" class="form-control" />
-                <span asp-validation-for="Trip.ID" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Trip.TYNote" class="control-label"></label>
-                <input asp-for="Trip.TYNote" class="form-control" />
-                <span asp-validation-for="Trip.TYNote" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
+<center> 
+    <img src="Logo.png" alt="logo" />
+</center>
 
+<center color="#ff0095">
+    <h2> <a asp-page="./AddTravelers">Add a New Traveler</a> </h2>
+    <h2><a asp-page="./AddPackage">Add a New Package</a> </h2>
+    
+    <h2><a asp-page="./Trips">Add a Thank You Note</a></h2>
+   
+    
+    <h2><a asp-page="./ProcessPayment">Make Payment</a></h2>
+   
+</center>
+
+
+
+
+<center>
 <div>
-    <a asp-page="Index">Back to List</a>
+    <a asp-page="Index">Back to Agent List</a>
 </div>
+</center>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

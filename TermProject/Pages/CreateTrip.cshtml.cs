@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using TermProject.Data;
 using TermProject.Models;
 
@@ -26,12 +27,12 @@ namespace TermProject.Pages
 
         [BindProperty]
         public Trip Trip { get; set; } = default!;
-        
+
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
-          if (!ModelState.IsValid || _context.Trips == null || Trip == null)
+            if (!ModelState.IsValid || _context.Trips == null || Trip == null)
             {
                 return Page();
             }
@@ -41,5 +42,7 @@ namespace TermProject.Pages
 
             return RedirectToPage("./Index");
         }
+
     }
 }
+
